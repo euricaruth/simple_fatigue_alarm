@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatigue Alarm Dashboard</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .dashboard { background-color: white; padding: 30px 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; min-width: 300px; }
+        h1 { color: #333; }
+        .status { font-size: 1.2em; font-weight: bold; margin-bottom: 25px; padding: 8px; border-radius: 6px; }
+        .status.connected { color: #28a745; background-color: #e9f7eb; }
+        .status.disconnected { color: #dc3545; background-color: #fce8e6; }
+        .sensor-data { display: grid; grid-template-columns: 1fr; gap: 20px; font-size: 1.5em; }
+        .sensor-box { background-color: #f8f9fa; padding: 20px; border-radius: 8px; }
+        .sensor-box h2 { margin: 0 0 10px 0; font-size: 0.8em; color: #6c757d; text-transform: uppercase; }
+        .sensor-box p { margin: 0; font-weight: bold; color: #007bff; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Sensor Kelelahan</h1>
+        <div id="status" class="status disconnected">Menunggu Koneksi...</div>
+        <div class="sensor-data">
+            <div class="sensor-box">
+                <h2>Gerakan (PIR)</h2>
+                <p id="pirVal">--</p>
+            </div>
+            <div class="sensor-box">
+                <h2>Cahaya (LDR)</h2>
+                <p id="ldrVal">--</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
